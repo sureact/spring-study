@@ -6,7 +6,7 @@ import org.strongcom.study.hellospring.domain.Member;
 
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 class MemberServiceTest {
 
@@ -23,7 +23,7 @@ class MemberServiceTest {
 
         //then
         Optional<Member> fineMember = Optional.of(memberService.findOne(saveId).get());
-        Assertions.assertThat(member.getName()).isEqualTo(findMembers().getName());
+        assertThat(member.getName()).isEqualTo(fineMember.get().getName());
     }
 
     @Test
