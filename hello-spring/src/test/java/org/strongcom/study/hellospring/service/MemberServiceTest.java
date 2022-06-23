@@ -1,6 +1,7 @@
 package org.strongcom.study.hellospring.service;
 
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.strongcom.study.hellospring.domain.Member;
 import org.strongcom.study.hellospring.repository.MemoryMemberRepository;
@@ -12,9 +13,15 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class MemberServiceTest {
 
-    MemberService memberService = new MemberService();
+    MemberService memberService;
     //clear 해주고싶은데 service밖에 없음. 그래서 리포지토리 가져옴
-    MemoryMemberRepository memberRepository = new MemoryMemberRepository();
+    MemoryMemberRepository memberRepository;
+
+    @BeforeEach
+    public void beforeEach(){
+        memberRepository = new MemoryMemberRepository();
+        memberService = new MemberService(memberRepository);
+    }
 
     @AfterEach
     public void afterEach(){
