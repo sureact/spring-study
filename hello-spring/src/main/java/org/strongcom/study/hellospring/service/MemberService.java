@@ -2,6 +2,7 @@ package org.strongcom.study.hellospring.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.strongcom.study.hellospring.domain.Member;
 import org.strongcom.study.hellospring.repository.MemberRepository;
 import org.strongcom.study.hellospring.repository.MemoryMemberRepository;
@@ -9,7 +10,7 @@ import org.strongcom.study.hellospring.repository.MemoryMemberRepository;
 import java.util.List;
 import java.util.Optional;
 
-//@Service    //스프링이 올라올 때 이걸 보고 스프링 컨테이너에 서비스로 등록
+@Transactional      //JPA 쓸때는 항상 해주기(데이터를 저장하거나 변경할 때)
 public class MemberService {
     private final MemberRepository memberRepository;
 
