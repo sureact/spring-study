@@ -1,9 +1,11 @@
 package org.strongcom.study.hellospring.repository;
 
+import org.springframework.stereotype.Repository;
 import org.strongcom.study.hellospring.domain.Member;
 
 import java.util.*;
 
+//@Repository
 public class MemoryMemberRepository implements MemberRepository{
 
     private static Map<Long, Member> store = new HashMap<>();
