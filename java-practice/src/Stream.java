@@ -1,8 +1,8 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Stream {
-    public static void main(String[] args) {
+
+    public void runStream(){
         ArrayList<User> userArrayList = new ArrayList<User>();
 
         userArrayList.add(new User(0L, "sumin"));
@@ -15,4 +15,5 @@ public class Stream {
                 .forEach(System.out::println);
 
     }
+
 }
