@@ -3,10 +3,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter @Setter
+@Setter@Getter
 @NoArgsConstructor
 @AllArgsConstructor
 public class User{
     private Long id;
     private String name;
+
 }

@@ -8,10 +8,11 @@ public class Stream {
         userArrayList.add(new User(0L, "sumin"));
         userArrayList.add(new User(1L, "minsu"));
         userArrayList.add(new User(2L, "sam"));
+        userArrayList.add(new User(3L, "milk717"));
 
         userArrayList.stream()
                 .map(User::getName)
-                .filter(name -> name.contains("u"))
+                .filter(name->name.contains("u"))
                 .forEach(System.out::println);
 
     }
