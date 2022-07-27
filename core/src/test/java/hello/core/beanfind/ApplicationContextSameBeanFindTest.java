@@ -30,13 +30,6 @@ public class ApplicationContextSameBeanFindTest {
         assertThat(memberRepository).isInstanceOf(MemberRepository.class);
     }
 
-    @Test
-    @DisplayName("특정 타입을 모두 조회하기")
-    void findBeanByName() {
-        MemberRepository memberRepository = ac.getBean("memberRepository1",MemberRepository.class);
-        assertThat(memberRepository).isInstanceOf(MemberRepository.class);
-    }
-
     //클래스 안에 static 쓰면 이것을 사용한 클래스의 상위 클래스에서만 코드를 쓰겠다는거임.
    @Configuration
     static class SameBeanConfig {
